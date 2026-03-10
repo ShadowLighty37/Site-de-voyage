@@ -1,18 +1,15 @@
-name: HTML validation
-
 on:
   push:
   pull_request:
 
 jobs:
   validate-html:
-   runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-  steps:
-  - name: Checkout repository
-  uses: actions/checkout@v4
-  
-  - name: Validate HTML
-  uses: Cyb3r-Jak3/html5validator-action@master
-  with:
-  root: .
+      - name: Validate HTML
+        uses: Cyb3r-Jak3/html5validator-action@master
+        with:
+          root: .
